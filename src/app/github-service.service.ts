@@ -8,4 +8,11 @@ import { from } from 'rxjs';
 export class GithubServiceService {
 
   constructor(private http : HttpClient) { }
+getRepo(){
+const username = 'FGacheru'
+return this.http.get(`https://api.github.com/users/$(username)/repos`)
+
+}
+
+
 }

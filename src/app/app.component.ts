@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GithubServiceService } from './github-service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'github-search';
+
+  constructor(private gitService : GithubServiceService){}
 }
+
