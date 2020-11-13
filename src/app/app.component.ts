@@ -9,6 +9,13 @@ import { GithubServiceService } from './github-service.service';
 export class AppComponent {
   title = 'github-search';
 
+  gitRepo : any = [];
   constructor(private gitService : GithubServiceService){}
+
+  getGitRepo(){
+    this.gitService.getRepo().subscribe(repos => {
+    this.gitRepo = repos;
+    });
+  }
 }
 
