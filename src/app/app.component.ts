@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GithubServiceService } from './github-service.service';
 
 @Component({
@@ -6,16 +6,22 @@ import { GithubServiceService } from './github-service.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'github-search';
 
-  gitRepo : any = [];
-  constructor(private gitService : GithubServiceService){}
-
-  getGitRepo(){
+  Repos : any = [];
+  constructor(private gitService : GithubServiceService){
+    
+  }
+ngOnInit():void{
+//   this.getGitRepo
+  // }
+  //  getGitRepo(){
     this.gitService.getRepo().subscribe(repos => {
-    this.gitRepo = repos;
+    this.Repos = repos;
+    console.log(JSON.stringify(repos))
     });
   }
-}
+
+};
 
