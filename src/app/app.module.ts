@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
+import { HttpClientModule } from '@angular/common/http';
 import { GithubServiceService } from './github-service.service';
 
 @NgModule({
@@ -14,7 +15,8 @@ import { GithubServiceService } from './github-service.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [GithubServiceService],
   bootstrap: [AppComponent]
