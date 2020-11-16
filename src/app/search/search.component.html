@@ -1,8 +1,8 @@
 <app-form (searchTerms)="findUser($event)"></app-form>
-<div class="container-fluid" style="padding-top: 80px; padding-left: 50px;">
+<div class="container-fluid" style="padding-top: 80px; padding-left: 40px;">
     <div class="row">
         <div class="col-md-6">
-            <img style="border-radius: 50px;" src="{{users.avatar_url}}" alt="">
+            <img style="border-radius: 50px; padding-left: 100px;" src="{{users.avatar_url}}" alt="">
         </div>
         <div class="col-md-6">
             <h2 >Profile Information</h2>
@@ -46,7 +46,7 @@
                         {{repos.language}}
                     </p>
                     <p>
-                        {{repos.created_at}}
+                        {{repos.created_at | date}}
                     </p>
                     <div class="card-footer text-center">
                         <a href="{{ repos.html_url }}" class="btn btn-success" target="_blank">View on GitHub</a>
@@ -57,7 +57,11 @@
     </div>
 </div>
 
-
+<style>
+    .card{
+        background-color: darkcyan;
+    }
+</style>
 
 <!-- 
 <div class="container">
