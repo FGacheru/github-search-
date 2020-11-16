@@ -1,1 +1,123 @@
-<p>search works!</p>
+<app-form (searchTerms)="findUser($event)"></app-form>
+<div class="container-fluid" style="padding-top: 80px; padding-left: 50px;">
+    <div class="row">
+        <div class="col-md-6">
+            <img style="border-radius: 50px;" src="{{users.avatar_url}}" alt="">
+        </div>
+        <div class="col-md-6">
+            <h2 >Profile Information</h2>
+            <p> <span>Name:</span>
+                {{users.name}}
+            </p>
+            <p *ngIf="users.login">
+                <span>UserName:</span>
+                {{ users.login }}
+            </p>
+            <p><span>Bio:</span>
+                {{users.bio}}
+            </p>
+            <p><span>Repositories:</span>
+                {{users.public_repos}}
+            </p>
+            <p> Followers:
+                {{ users.followers }}
+            </p>
+            <p> Following:
+                {{ users.following }}
+            </p>
+        </div>
+    </div>
+    <div>
+        <h2 class="text-center pt-4  font-size:70px;">GitHub Repositories</h2>
+    </div>
+    <div class="container" style="text-align: center;">
+        <div class="row" style="font-family: 'Josefin Sans', sans-serif;
+        font-family: 'Lobster', cursive;; font-size:20px;">
+            <div class="col-md-6" *ngFor="let repos of repos">
+                <div class="card mt-3">
+                    <p class="text-center pt-4 para">
+                        {{repos.name}}
+                    </p>
+                    <hr>
+                    <p>
+                        {{repos.description}}
+                    </p>
+                    <p>
+                        {{repos.language}}
+                    </p>
+                    <p>
+                        {{repos.created_at}}
+                    </p>
+                    <div class="card-footer text-center">
+                        <a href="{{ repos.html_url }}" class="btn btn-success" target="_blank">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- 
+<div class="container">
+    
+
+  <div class="text-center p-5">
+    <app-form (searchTerms)="findUser($event)"></app-form>
+    <div class="row">
+      <div class="col-md-6">
+          <img style="border-radius: 50px;" src="{{users.avatar_url}}" alt="">
+      </div> 
+       <div class="col-md-6">
+          <h2 >Profile Information</h2>
+          <p> <span>Name:</span>
+              {{users.name}}
+          </p>
+          <p *ngIf="users.login">
+              <span>usersName:</span>
+              {{ users.login }}
+          </p>
+          <p><span>Bio:</span>
+              {{users.bio}}
+          </p>
+          <p><span>Repositories:</span>
+              {{users.public_repos}}
+          </p>
+          <p> Followers:
+              {{ users.followers }}
+          </p>
+          <p> Following:
+              {{ users.following }}
+          </p>
+      </div>
+  </div> 
+  <div>
+
+
+    <h2 style="font-weight: bolder;">
+      FGacheru
+      <br>
+      <small class="text-muted" style="font-weight: bold;">My Github Repositories</small>
+    </h2>
+  </div>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let repo of  Repos ">
+      <div class="card" style="background-color: wheat;">
+        <div class="card-body">
+          <br>
+          <h5 class="card-title">{{repo.name}}</h5>
+          <p class="card-text">{{repo.description}}</p>
+          <a href="{{repo.html_url}}" class="btn btn-primary">Repositories</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <style>
+  .card{
+    height: 220px;
+  }
+</style> 
+-->
