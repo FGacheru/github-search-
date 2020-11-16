@@ -1,0 +1,13 @@
+<app-nav></app-nav>
+<div class="container-fluid">
+  <form class="form-inline">
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="inputPassword2" class="sr-only">Search Name </label>
+      <input type="text" class="form-control" id="term" [(ngModel)]="searchName" name="searchName"
+        placeholder="Search Name">
+    </div>
+    <button type="submit" (click)="getName()" class="btn btn-primary mb-2" appHighlight>
+      Search
+    </button>
+  </form>
+</div>
