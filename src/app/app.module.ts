@@ -11,6 +11,7 @@ import { GithubServiceService } from './github-service.service';
 import { FormComponent } from './form/form.component';
 import { from } from 'rxjs';
 import { DateCountPipe } from './date-count.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { GithubProfileComponent } from './github-profile/github-profile.component';
 //import { NotFoundComponent } from './not-found/not-found.component';
 
@@ -27,7 +28,8 @@ import { DateCountPipe } from './date-count.pipe';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [GithubServiceService],
   bootstrap: [AppComponent]
